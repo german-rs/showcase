@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import Home from './pages/Home'
 import Gallery from './pages/Gallery'
@@ -10,7 +10,7 @@ import './App.css'
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter basename="/showcase/site-01">
       <Helmet>
         <title>Portafolio Fotográfico 01</title>
         <meta name="description" content="Portafolio fotográfico profesional" />
@@ -27,7 +27,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 

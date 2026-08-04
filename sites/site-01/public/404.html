@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirigiendo...</title>
+    <script type="text/javascript">
+      // Truco spa-github-pages: convierte la ruta en un query param
+      // para que GitHub Pages sirva index.html y React Router
+      // pueda recuperar la ruta real en el cliente.
+      var pathSegmentsToKeep = 2; // 'showcase' + 'site-01'
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
