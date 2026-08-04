@@ -1,0 +1,9 @@
+.about {
+  padding-top: 120px;
+}
+
+.about__text {
+  max-width: 600px;
+  margin: 2rem auto 0;
+  color: var(--color-text-muted);
+}

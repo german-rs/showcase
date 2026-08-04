@@ -1,0 +1,35 @@
+{
+  "name": "showcase-monorepo",
+  "version": "1.0.0",
+  "description": "Monorepo con 3 portafolios fotográficos en React + Vite, desplegados en GitHub Pages",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm run install:sites",
+    "install:sites": "npm run install:site-01 && npm run install:site-02 && npm run install:site-03",
+    "install:site-01": "cd sites/site-01 && npm install",
+    "install:site-02": "cd sites/site-02 && npm install",
+    "install:site-03": "cd sites/site-03 && npm install",
+    "dev:site-01": "cd sites/site-01 && npm run dev",
+    "dev:site-02": "cd sites/site-02 && npm run dev",
+    "dev:site-03": "cd sites/site-03 && npm run dev",
+    "build:all": "npm run build:site-01 && npm run build:site-02 && npm run build:site-03",
+    "build:site-01": "cd sites/site-01 && npm run build",
+    "build:site-02": "cd sites/site-02 && npm run build",
+    "build:site-03": "cd sites/site-03 && npm run build",
+    "preview:site-01": "cd sites/site-01 && npm run preview",
+    "preview:site-02": "cd sites/site-02 && npm run preview",
+    "preview:site-03": "cd sites/site-03 && npm run preview",
+    "clean": "rm -rf sites/site-01/dist sites/site-02/dist sites/site-03/dist"
+  },
+  "keywords": [
+    "react",
+    "vite",
+    "portfolio",
+    "photography",
+    "github-pages",
+    "monorepo"
+  ],
+  "author": "german-rs",
+  "license": "MIT",
+  "devDependencies": {}
+}

@@ -1,0 +1,79 @@
+name: Deploy All Sites to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Install site-01 dependencies
+        working-directory: ./sites/site-01
+        run: npm ci
+
+      - name: Install site-02 dependencies
+        working-directory: ./sites/site-02
+        run: npm ci
+
+      - name: Install site-03 dependencies
+        working-directory: ./sites/site-03
+        run: npm ci
+
+      - name: Build site-01
+        working-directory: ./sites/site-01
+        run: npm run build
+
+      - name: Build site-02
+        working-directory: ./sites/site-02
+        run: npm run build
+
+      - name: Build site-03
+        working-directory: ./sites/site-03
+        run: npm run build
+
+      - name: Prepare deploy folder
+        run: |
+          mkdir -p _site
+          cp -r sites/site-01/dist _site/site-01
+          cp -r sites/site-02/dist _site/site-02
+          cp -r sites/site-03/dist _site/site-03
+          echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Showcase</title></head><body><h1>Showcase</h1><ul><li><a href="site-01/">Site 01</a></li><li><a href="site-02/">Site 02</a></li><li><a href="site-03/">Site 03</a></li></ul></body></html>' > _site/index.html
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

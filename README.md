@@ -1,5 +1,4 @@
-Showcase de sitios de fotografía
-
+# Showcase de sitios de fotografía
 
 ---
 
@@ -17,15 +16,3 @@ Showcase de sitios de fotografía
 - **Despliegue**: GitHub Pages, Netlify o Vercel.
 
 ---
-
-### Guía rápida de diseño para cada landing
-- **Hero**: imagen grande, nombre del fotógrafo y CTA a portafolio completo.  
-- **Selección curada**: 6–12 proyectos destacados con miniaturas; cada proyecto abre una ficha con descripción breve, proceso y galería.  
-- **Sobre**: biografía corta, equipo/estilo, premios (si aplica).  
-- **Contacto**: formulario simple o enlace a email/Instagram.  
-- **Footer**: créditos, licencia de imágenes y enlaces legales.
-
----
-
-### Cómo ejecutar localmente
-1. Clona el repositorio:

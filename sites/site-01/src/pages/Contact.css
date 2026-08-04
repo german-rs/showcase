@@ -1,0 +1,8 @@
+.contact {
+  padding-top: 120px;
+}
+
+.contact__text {
+  margin-top: 2rem;
+  color: var(--color-text-muted);
+}
