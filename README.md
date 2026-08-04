@@ -1,18 +1,17 @@
-# Showcase de sitios de fotografía
+# Showcase
 
----
+Monorepo con 3 portafolios fotograficos desarrollados con **React + Vite**, desplegados automaticamente en **GitHub Pages**.
 
-### Objetivo
-- **Landing principal**: presentar el proyecto y ofrecer una navegación clara hacia cada portafolio individual.  
-- **Landings de portafolio**: mostrar trabajos seleccionados de cada fotógrafo, con énfasis en imágenes, contexto de cada proyecto y datos de contacto.  
-- **Enfoque**: curado, visual y rápido de cargar; prioridad en la experiencia móvil y en la calidad de las imágenes.
+## Ver en vivo
 
----
+| Sitio | Enlace |
+|-------|--------|
+| Portafolio 01 | [https://german-rs.github.io/showcase/site-01/](https://german-rs.github.io/showcase/site-01/) |
+| Portafolio 02 | [https://german-rs.github.io/showcase/site-02/](https://german-rs.github.io/showcase/site-02/) |
+| Portafolio 03 | [https://german-rs.github.io/showcase/site-03/](https://german-rs.github.io/showcase/site-03/) |
 
-### Tecnologías sugeridas
-- **HTML5, CSS3, JavaScript (vanilla)** o **framework ligero** (por ejemplo, Eleventy, Astro, o Next.js si prefieres React).  
-- **Galería**: CSS Grid / Masonry o librería ligera (Glide, PhotoSwipe).  
-- **Optimización de imágenes**: WebP, `srcset`, lazy-loading.  
-- **Despliegue**: GitHub Pages, Netlify o Vercel.
+> **Nota:** Los enlaces estaran activos una vez que configures GitHub Pages siguiendo los pasos de la seccion [Activar GitHub Pages](#activar-github-pages).
 
----
+## Estructura del proyecto
+
+...
