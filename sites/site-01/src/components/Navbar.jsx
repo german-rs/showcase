@@ -1,21 +1,47 @@
-import { NavLink } from 'react-router-dom'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Navbar.css'
 
+// Nav por anclas: todo vive en la Home de una sola página.
+const links = [
+  { label: 'Inicio', href: '/#inicio' },
+  { label: 'Nosotros', href: '/#nosotros' },
+  { label: 'Portafolio', href: '/#portafolio' },
+  { label: 'Testimonios', href: '/#testimonios' },
+  { label: 'Contacto', href: '/#contacto' },
+]
+
 function Navbar() {
+  const [open, setOpen] = useState(false)
+
   return (
-    <nav className="navbar">
-      <div className="container navbar__inner">
-        <NavLink to="/" className="navbar__logo">
-          LENS<span className="navbar__logo-accent">.</span>
-        </NavLink>
-        <ul className="navbar__links">
-          <li><NavLink to="/" end>Inicio</NavLink></li>
-          <li><NavLink to="/gallery">Galería</NavLink></li>
-          <li><NavLink to="/about">Sobre mí</NavLink></li>
-          <li><NavLink to="/contact">Contacto</NavLink></li>
-        </ul>
+    <header className="navbar">
+      <div className="navbar__inner container">
+        <Link to="/" className="navbar__logo" onClick={() => setOpen(false)}>
+          Aurora <span className="navbar__logo-accent">Fotografía</span>
+        </Link>
+    
+        <button
+          type="button"
+          className={`navbar__toggle ${open ? 'is-open' : ''}`}
+          onClick={() => setOpen((prev) => !prev)}
+          aria-label="Abrir menú"
+          aria-expanded={open}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <nav className={`navbar__links ${open ? 'is-open' : ''}`}>
+          {links.map((link) => (
+            <Link key={link.href} to={link.href} onClick={() => setOpen(false)}>
+              {link.label}
+            </Link>
+          ))}
+        </nav>
       </div>
-    </nav>
+    </header>
   )
 }
 

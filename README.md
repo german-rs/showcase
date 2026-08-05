@@ -1,65 +1,63 @@
 # Showcase
 
-<p align="center">
-  <img src="https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white&style=flat-square" alt="React 18">
-  <img src="https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white&style=flat-square" alt="Vite 5">
-  <img src="https://img.shields.io/badge/GitHub%20Pages-Deployed-222222?logo=github&logoColor=white&style=flat-square" alt="GitHub Pages">
-  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License MIT">
-</p>
+Plantillas de portafolio web para fotógrafos de bodas, construidas en **React + Vite** y desplegadas automáticamente en **GitHub Pages**. Sirven como demo para ofrecer sitios personalizados a distintos clientes del rubro.
 
-<p align="center">
-  Monorepo con 3 portafolios fotograficos construidos con <strong>React + Vite</strong> y desplegados automaticamente en <strong>GitHub Pages</strong>.
-</p>
+[![React 18](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white&style=flat-square)](https://react.dev/)
+[![Vite 5](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white&style=flat-square)](https://vitejs.dev/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-222222?logo=github&logoColor=white&style=flat-square)](https://pages.github.com/)
+[![License MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](./LICENSE)
 
 ---
 
 ## Ver en vivo
 
-| Portafolio | Vista previa | Estado |
-|------------|--------------|--------|
-| **Sitio 01** &mdash; Lens | [german-rs.github.io/showcase/site-01](https://german-rs.github.io/showcase/site-01/) | En desarrollo |
-| **Sitio 02** &mdash; Pronto | [german-rs.github.io/showcase/site-02](https://german-rs.github.io/showcase/site-02/) | En construccion |
-| **Sitio 03** &mdash; Pronto | [german-rs.github.io/showcase/site-03](https://german-rs.github.io/showcase/site-03/) | En construccion |
+| Plantilla | Estado | Demo |
+|---|---|---|
+| **Sitio 01** | En desarrollo | [german-rs.github.io/showcase/site-01](https://german-rs.github.io/showcase/site-01/) |
+| **Sitio 02** | Pendiente | [german-rs.github.io/showcase/site-02](https://german-rs.github.io/showcase/site-02/) |
+| **Sitio 03** | Pendiente | [german-rs.github.io/showcase/site-03](https://german-rs.github.io/showcase/site-03/) |
 
-> Los enlaces se activan una vez configurado GitHub Pages. Sigue los pasos de la seccion [Activar GitHub Pages](#activar-github-pages).
+Los enlaces se activan una vez configurado GitHub Pages en el repositorio (ver [Despliegue](#despliegue)).
+
+---
+
+## Por qué esta arquitectura
+
+Cada sitio es una app React independiente pensada para convertirse en el sitio real de un cliente, no solo en una demo:
+
+- **Rutas limpias**: `BrowserRouter` con el truco de redirección [spa-github-pages](https://github.com/rafgraph/spa-github-pages) en vez de `HashRouter`. Las URLs quedan como `/site-01/gallery` en lugar de `/site-01/#/gallery`, y las rutas internas no se rompen al recargar o compartir un link directo.
+- **SEO por página**: `react-helmet-async` permite título y meta description propios en cada vista.
+- **Build aislado**: cada sitio tiene su propio `vite.config.js`, `package.json` y `base path`, así que se pueden construir y desplegar por separado.
 
 ---
 
 ## Arquitectura
 
-```text
+```
 showcase/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml          # CI/CD: build + deploy automático
 │
 ├── sites/
-│   ├── site-01/                # Portafolio 1: React + Vite
+│   ├── site-01/
+│   │   ├── public/
+│   │   │   └── 404.html        # Redirección SPA para GitHub Pages
 │   │   ├── src/
 │   │   │   ├── pages/          # Home, Gallery, About, Contact
 │   │   │   ├── components/     # Navbar, Footer
-│   │   │   ├── hooks/          # Custom hooks
-│   │   │   └── assets/         # Imágenes y fuentes
+│   │   │   └── assets/
 │   │   ├── index.html
 │   │   ├── vite.config.js      # base: '/showcase/site-01/'
 │   │   └── package.json
 │   │
-│   ├── site-02/                # Portafolio 2 (plantilla)
-│   └── site-03/                # Portafolio 3 (plantilla)
+│   ├── site-02/                # Plantilla 2 (en construcción)
+│   └── site-03/                # Plantilla 3 (en construcción)
 │
 ├── .gitignore
 ├── package.json                # Scripts globales del monorepo
 └── README.md
 ```
-
-
-
-Cada sitio es una aplicacion **Vite + React** totalmente independiente con:
-
-- Router propio (`HashRouter` para compatibilidad con GitHub Pages)
-- SEO por pagina (`react-helmet-async`)
-- Estilos modulares (CSS puro)
-- Build aislado
 
 ---
 
@@ -71,33 +69,47 @@ Cada sitio es una aplicacion **Vite + React** totalmente independiente con:
 
 ---
 
-## Instalacion rapida
+## Instalación rápida
 
 ```bash
-# Clonar
 git clone https://github.com/german-rs/showcase.git
 cd showcase
-
-# Instalar todo: raiz + 3 sitios
-npm run install:all
+npm run install:all   # instala raíz + los 3 sitios
+```
 
 ## Desarrollo
-Levanta cualquier sitio de forma independiente:
 
-# Sitio 01
+Cada sitio corre de forma independiente:
+
+```bash
 npm run dev:site-01
-
-# Sitio 02
 npm run dev:site-02
-
-# Sitio 03
 npm run dev:site-03
+```
 
+## Build y preview local
 
-## Build
+```bash
+npm run build:site-01     # o build:all para los 3
+npm run preview:site-01   # sirve el build localmente para probarlo
+```
 
-# Construir los 3 sitios
-npm run build:all
+---
 
-# Construir uno especifico
-npm run build:site-01
+## Despliegue
+
+El workflow `.github/workflows/deploy.yml` construye los 3 sitios y los publica en GitHub Pages en cada push a `main`. Requiere que **GitHub Pages** esté activado en *Settings → Pages* con la fuente **GitHub Actions**.
+
+---
+
+## Roadmap
+
+- [ ] Terminar contenido y diseño del Sitio 01
+- [ ] Sitio 02
+- [ ] Sitio 03
+
+---
+
+## Licencia
+
+MIT
