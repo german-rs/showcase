@@ -1,0 +1,44 @@
+.portfolio {
+  padding: 7rem 0;
+  background: var(--color-bg-alt);
+  text-align: center;
+}
+
+.portfolio__title {
+  max-width: 640px;
+  margin: 0 auto 3rem;
+}
+
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.portfolio__item {
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.portfolio__item img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* fuerza cuadrado, sin importar el tamaño original */
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.portfolio__item:hover img {
+  transform: scale(1.08);
+}
+
+.portfolio__cta {
+  display: inline-block;
+}
+
+/* En celular, 3 columnas quedan muy angostas: bajamos a 2 */
+@media (max-width: 640px) {
+  .portfolio__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

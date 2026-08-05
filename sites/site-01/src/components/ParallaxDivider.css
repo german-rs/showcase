@@ -1,0 +1,60 @@
+.parallax-divider {
+  position: relative;
+  height: 45vh;
+  min-height: 320px;
+  background-attachment: fixed; /* <- el truco del efecto parallax */
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Capa oscura para legibilidad de texto (si se usa la prop "quote") */
+.parallax-divider__overlay {
+  position: absolute;
+  inset: 0; /* atajo que equivale a top:0; right:0; bottom:0; left:0; */
+  background: rgba(36, 30, 26, 0.35);
+}
+
+.parallax-divider__wave {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  line-height: 0; /* evita espacio extra que el navegador agrega bajo los SVG */
+}
+
+.parallax-divider__wave svg {
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
+.parallax-divider__wave--top {
+  top: 0;
+}
+
+.parallax-divider__wave--bottom {
+  bottom: 0;
+  transform: rotate(180deg); /* reutilizamos la misma curva, solo la damos vuelta */
+}
+
+.parallax-divider__quote {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  text-align: center;
+  max-width: 700px;
+}
+
+/* En pantallas angostas (celulares) desactivamos el fondo fijo:
+   por compatibilidad en iOS y para evitar el efecto "tironeado"
+   que puede sentirse en móviles al hacer scroll. */
+@media (max-width: 768px) {
+  .parallax-divider {
+    background-attachment: scroll;
+  }
+}
