@@ -1,0 +1,51 @@
+.coverage {
+  padding: 7rem 0;
+  background: var(--color-bg);
+}
+
+.coverage__title {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3rem;
+}
+
+/* Dos columnas de igual ancho (1fr = "una fracción" del espacio disponible) */
+.coverage__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.coverage__item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.coverage__item img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Pequeño efecto zoom al pasar el mouse, típico en sitios de fotografía */
+.coverage__item:hover img {
+  transform: scale(1.05);
+}
+
+.coverage__item figcaption {
+  text-align: center;
+  margin-top: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+/* En pantallas angostas (celular), apilamos las columnas en vez de
+   dejarlas una al lado de la otra */
+@media (max-width: 640px) {
+  .coverage__grid {
+    grid-template-columns: 1fr;
+  }
+}

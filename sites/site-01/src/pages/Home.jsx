@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import Hero from '../components/Hero'
 import About from '../components/About'
+import Coverage from '../components/Coverage'
 
 function Home() {
   const location = useLocation()
@@ -21,7 +22,8 @@ function Home() {
     <>
       <Hero />
       <About />
-      {/* Próximos pasos: Cobertura, divisor parallax,
+      <Coverage />
+      {/* Próximos pasos: divisor parallax,
           Portafolio, Testimonios, FAQ, Contacto */}
     </>
   )
