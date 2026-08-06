@@ -7,12 +7,12 @@ const zones = [
   {
     city: 'Santiago',
     caption: 'Matrimonios en Santiago',
-    image: 'https://loremflickr.com/700/900/wedding,party',
+    image: 'https://fotorama.cl/boda/wp-content/uploads/2024/10/Fotorama-boda-DH-47-2.jpg',
   },
   {
     city: 'Viña del Mar',
     caption: 'Matrimonios en Viña del Mar',
-    image: 'https://loremflickr.com/700/900/wedding,party,latin',
+    image: 'https://fotorama.cl/boda/wp-content/uploads/2024/10/Fotorama-boda-DH-40-4.jpg',
   },
 ]
 

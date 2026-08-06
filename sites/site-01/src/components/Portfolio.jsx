@@ -5,12 +5,12 @@ import './Portfolio.css'
 // Fotos de vista previa (placeholder). Se reemplazan por el trabajo
 // real del cliente cuando esta plantilla se entrega a un fotógrafo.
 const photos = [
-  'https://loremflickr.com/400/400/wedding',
-  'https://loremflickr.com/500/500/wedding,party',
-  'https://loremflickr.com/600/600/wedding,party',
-  'https://loremflickr.com/300/300/wedding,party',
-  'https://loremflickr.com/200/200/wedding,party',
-  'https://loremflickr.com/700/700/wedding,party',
+  'https://fotorama.cl/boda/wp-content/uploads/2025/09/36-fotografo-de-matrimonios-Casona-Anwandter.jpg',
+  'https://fotorama.cl/boda/wp-content/uploads/2025/12/DSC09796.jpg',
+  'https://fotorama.cl/boda/wp-content/uploads/2025/09/fotografo-de-matrimonio124.jpg',
+  'https://fotorama.cl/boda/wp-content/uploads/2025/09/13-fotografo-de-matrimonios-Casona-Anwandter.jpg',
+  'https://fotorama.cl/boda/wp-content/uploads/2024/10/Fotorama-boda-DH-8-7.jpg',
+  'https://fotorama.cl/boda/wp-content/uploads/2024/10/Fotorama-boda-DH-47-5.jpg',
 ]
 
 function Portfolio() {

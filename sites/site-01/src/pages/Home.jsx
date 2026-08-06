@@ -25,7 +25,7 @@ function Home() {
       <Hero />
       <About />
       <Coverage />
-      <ParallaxDivider image="https://loremflickr.com/1600/800/wedding,party" />
+      <ParallaxDivider image="https://fotorama.cl/boda/wp-content/uploads/2025/12/50-DSC09835.jpg" />
       <Portfolio />
       {/* Próximos pasos: Testimonios, FAQ, Contacto */}
     </>
