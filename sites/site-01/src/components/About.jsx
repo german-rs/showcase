@@ -20,7 +20,7 @@ function About() {
         <div className="about__intro">
           <p className="section-eyebrow">Fotógrafos de matrimonios en Santiago</p>
           <h2 className="about__heading">
-            Somos Emilia y Tomás: fotografía documental, sin poses forzadas
+            Somos Carolina y Andrés: fotografía documental, sin poses forzadas
           </h2>
         </div>
 
