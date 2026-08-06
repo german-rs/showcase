@@ -25,7 +25,7 @@ function Home() {
       <Hero />
       <About />
       <Coverage />
-      <ParallaxDivider image="https://picsum.photos/seed/wedding-details/1600/800" />
+      <ParallaxDivider image="https://loremflickr.com/1600/800/wedding,party" />
       <Portfolio />
       {/* Próximos pasos: Testimonios, FAQ, Contacto */}
     </>

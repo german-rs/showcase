@@ -7,12 +7,12 @@ const zones = [
   {
     city: 'Santiago',
     caption: 'Matrimonios en Santiago',
-    image: 'https://picsum.photos/seed/wedding-santiago/700/900',
+    image: 'https://loremflickr.com/700/900/wedding,party',
   },
   {
     city: 'Viña del Mar',
     caption: 'Matrimonios en Viña del Mar',
-    image: 'https://picsum.photos/seed/wedding-vina/700/900',
+    image: 'https://loremflickr.com/700/900/wedding,party,latin',
   },
 ]
 

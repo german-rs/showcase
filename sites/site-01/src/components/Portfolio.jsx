@@ -5,12 +5,12 @@ import './Portfolio.css'
 // Fotos de vista previa (placeholder). Se reemplazan por el trabajo
 // real del cliente cuando esta plantilla se entrega a un fotógrafo.
 const photos = [
-  'https://picsum.photos/seed/wedding-01/500/500',
-  'https://picsum.photos/seed/wedding-02/500/500',
-  'https://picsum.photos/seed/wedding-03/500/500',
-  'https://picsum.photos/seed/wedding-04/500/500',
-  'https://picsum.photos/seed/wedding-05/500/500',
-  'https://picsum.photos/seed/wedding-06/500/500',
+  'https://loremflickr.com/400/400/wedding',
+  'https://loremflickr.com/500/500/wedding,party',
+  'https://loremflickr.com/600/600/wedding,party',
+  'https://loremflickr.com/300/300/wedding,party',
+  'https://loremflickr.com/200/200/wedding,party',
+  'https://loremflickr.com/700/700/wedding,party',
 ]
 
 function Portfolio() {
