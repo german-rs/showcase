@@ -5,6 +5,9 @@ import About from '../components/About'
 import Coverage from '../components/Coverage'
 import ParallaxDivider from '../components/ParallaxDivider'
 import Portfolio from '../components/Portfolio'
+import Testimonials from "../components/Testimonials";
+import testimonials from "../data/testimonials";
+import CTA from "../components/CTA";
 
 function Home() {
   const location = useLocation()
@@ -27,7 +30,12 @@ function Home() {
       <Coverage />
       <ParallaxDivider image="https://fotorama.cl/boda/wp-content/uploads/2025/12/50-DSC09835.jpg" />
       <Portfolio />
-      {/* Próximos pasos: Testimonios, FAQ, Contacto */}
+      <Testimonials
+        title="Lo que dicen nuestros clientes"
+        testimonials={testimonials}
+      />
+      <CTA />
+      {/* Contacto */}
     </>
   )
 }

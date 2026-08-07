@@ -1,0 +1,17 @@
+.cta {
+  padding: 7rem 0;
+  background: var(--color-bg-alt);
+}
+
+.cta__content {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta__text {
+  max-width: 560px;
+  margin: 1.5rem auto 2.5rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}

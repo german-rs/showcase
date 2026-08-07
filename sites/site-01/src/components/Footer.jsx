@@ -2,7 +2,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__inner">
-        <p>© {new Date().getFullYear()} Lens Photography. Todos los derechos reservados.</p>
+        <p>© {new Date().getFullYear()} germanriveros.cl Todos los derechos reservados.</p>
       </div>
     </footer>
   )
