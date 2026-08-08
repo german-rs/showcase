@@ -8,6 +8,8 @@ import Portfolio from '../components/Portfolio'
 import Testimonials from "../components/Testimonials";
 import testimonials from "../data/testimonials";
 import CTA from "../components/CTA";
+import FAQ from "../components/FAQ";
+import faq from "../data/faq";
 
 function Home() {
   const location = useLocation()
@@ -30,11 +32,13 @@ function Home() {
       <Coverage />
       <ParallaxDivider image="https://fotorama.cl/boda/wp-content/uploads/2025/12/50-DSC09835.jpg" />
       <Portfolio />
+      <ParallaxDivider image="https://images.unsplash.com/photo-1512281744869-ddfd5b9cf041?auto=format&fit=crop&w=1600&q=80" />
       <Testimonials
         title="Lo que dicen nuestros clientes"
         testimonials={testimonials}
       />
       <CTA />
+      <FAQ title="Antes de escribirnos" items={faq} />
       {/* Contacto */}
     </>
   )
