@@ -40,6 +40,7 @@ function Home() {
       <CTA />
       <FAQ title="Antes de escribirnos" items={faq} />
       {/* Contacto */}
+      
     </>
   )
 }
