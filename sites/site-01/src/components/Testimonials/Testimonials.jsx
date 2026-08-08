@@ -1,20 +1,26 @@
 import "./Testimonials.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function Testimonials({ title, testimonials }) {
   return (
-    <section id="testimonials" className="testimonials">
+    <section id="testimonios" className="testimonials">
       <div className="container">
        <header className="testimonials__header">
         <p className="section-eyebrow">Testimonios</p>
         <h2 className="section-title">{title}</h2>
       </header>
 
+        {/* Navigation y Pagination dan control manual (flechas + puntos), y
+            pauseOnMouseEnter detiene el autoplay al pasar el mouse o el foco
+            del teclado. Un carrusel que avanza solo sin forma de detenerlo
+            no cumple el criterio WCAG 2.2.2 (Pausar, detener, ocultar). */}
         <Swiper
-          modules={[Autoplay]}
+          modules={[Autoplay, Navigation, Pagination]}
           spaceBetween={30}
           slidesPerView={1}
           breakpoints={{
@@ -22,7 +28,9 @@ function Testimonials({ title, testimonials }) {
             1024: { slidesPerView: 3 },
           }}
           loop={true}
-          autoplay={{ delay: 4000 }}
+          autoplay={{ delay: 4000, pauseOnMouseEnter: true }}
+          navigation
+          pagination={{ clickable: true }}
         >
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.id}>
@@ -40,7 +48,7 @@ function Testimonials({ title, testimonials }) {
 
                 <div className="testimonial-card__author">
                   <img
-                    src={testimonial.image}
+                    src={`${import.meta.env.BASE_URL}${testimonial.image}`}
                     alt={testimonial.name}
                     loading="lazy"
                   />
@@ -59,4 +67,3 @@ function Testimonials({ title, testimonials }) {
 }
 
 export default Testimonials;
-

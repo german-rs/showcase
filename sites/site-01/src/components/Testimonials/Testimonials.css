@@ -9,10 +9,15 @@
   margin: 0 auto 4rem;
 }
 
-.testimonials__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+/* Swiper trae sus propias variables CSS para no tener que pisar sus
+   estilos a la fuerza. Las apuntamos a los colores del sitio. */
+.testimonials .swiper {
+  --swiper-navigation-color: var(--color-accent);
+  --swiper-navigation-size: 22px;
+  --swiper-pagination-color: var(--color-accent);
+  --swiper-pagination-bullet-inactive-color: var(--color-accent-soft);
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  padding-bottom: 3rem; /* espacio para que los puntos no tapen la última tarjeta */
 }
 
 .testimonial-card {
@@ -63,15 +68,13 @@
 }
 
 
-@media (max-width:768px){
-
-  .testimonials__grid{
-
-      grid-template-columns:1fr;
-
-      gap:3rem;
-
+@media (max-width: 640px) {
+  .testimonials .swiper {
+    padding-bottom: 2.5rem;
   }
 
+  .testimonials .swiper-button-next,
+  .testimonials .swiper-button-prev {
+    display: none; /* en mobile navegan con swipe táctil, no hacen falta las flechas */
+  }
 }
-
